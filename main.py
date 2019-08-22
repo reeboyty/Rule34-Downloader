@@ -101,7 +101,7 @@ def main(args):
     downloaded_images = 0
     for image in images:
         # Check for the images limit
-        if downloaded_images >= args.limit:
+        if args.limit > 0 and downloaded_images >= args.limit:
             logger.warning("Downloaded images limit exceeded. Stopping...")
             return
 
