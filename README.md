@@ -1,20 +1,4 @@
 # Rule34 Downloader
-<style>
-  .text-center {
-    text-align: center;
-  }
-
-  #logo {
-    border-radius: 10px;
-
-    background: linear-gradient(325deg, rgba(2, 0, 36, 1) 0%, rgba(185, 0, 255, 1) 0%, rgba(0, 255, 206, 1) 100%);
-
-    -webkit-box-shadow: 10px 10px 30px 0px rgba(0, 0, 0, 0.35);
-    -moz-box-shadow: 10px 10px 30px 0px rgba(0, 0, 0, 0.35);
-    box-shadow: 10px 10px 30px 0px rgba(0, 0, 0, 0.35);
-  }
-</style>  
-
 <div style="text-align: center; border-radius: 10px; background: linear-gradient(325deg, rgba(2, 0, 36, 1) 0%, rgba(185, 0, 255, 1) 0%, rgba(0, 255, 206, 1) 100%); webkit-box-shadow: 10px 10px 30px 0px rgba(0, 0, 0, 0.35); -moz-box-shadow: 10px 10px 30px 0px rgba(0, 0, 0, 0.35); box-shadow: 10px 10px 30px 0px rgba(0, 0, 0, 0.35);">
   <img src="https://rule34.xxx/images/header2.png"/>
 </div>
