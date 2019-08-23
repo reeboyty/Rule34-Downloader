@@ -3,7 +3,7 @@
 """
     Name: Rule34 downloader
     Author: Alessandro Nava -- Zeta314 - https://github.com/Zeta314
-    Version: 1.0 alpha
+    Version: 1.1 alpha
     Date: 22/08/2019
 """
 
@@ -12,11 +12,18 @@ import requests
 
 import argparse
 import logging
+import hashlib
 
 from pathlib import Path
 from timeit import default_timer
 
 LOGGING_LEVEL = logging.INFO
+
+def calculate_md5(file):
+    file_handle = open(file, 'rb')
+    hash = hashlib.md5(file_handle.read())
+
+    return hash.hexdigest()
 
 def list_diff(list1, list2):
     return (list(set(list1) - set(list2)))
@@ -122,6 +129,10 @@ def main(args):
         output_name = Path(destination_folder, '.'.join([image.md5, image_extension]))
         logger.debug("Output file: {}".format(output_name))
         logger.info("Downloading {}...".format(image_name))
+
+        for file in destination_folder.iterdir():
+            if calculate_md5(file) == image.md5:
+                logger.info("This image was already downloaded")
 
         response = requests.get(image.file_url, stream=True)
         logger.debug("API response is {}".format(response.status_code))
