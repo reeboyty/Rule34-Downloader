@@ -16,7 +16,7 @@ import logging
 from pathlib import Path
 from timeit import default_timer
 
-LOGGING_LEVEL = logging.DEBUG
+LOGGING_LEVEL = logging.INFO
 
 def list_diff(list1, list2):
     return (list(set(list1) - set(list2)))
@@ -67,7 +67,14 @@ def main(args):
                  "(this will take approximately {0:.3g} seconds)".format(0.002*images_count))
 
     fetch_start = default_timer() # To measure how much time does it take
-    images = rule34sync.getImages(args.tags, singlePage=False)
+    try:
+        images = rule34sync.getImages(args.tags, singlePage=False)
+    except Exception as e:
+        logger.error("There was an error while gathering images.")
+        logger.error("There's probably something wrong with this tag, try another one.")
+        logger.debug(str(e))
+        return
+
     fetch_end = default_timer()
 
     logger.info("This took exactly {0:.3g} seconds".format((fetch_end - fetch_start) / images_count))
