@@ -10,6 +10,14 @@ It downloads every image it can find matching the given tags from Rule34.
 - Python 3.6
 - [LordOfPolls' Rule34 API wrapper](https://github.com/LordOfPolls/Rule34-API-Wrapper)
 
+### Installation
+> While in the program directory, type `pip3 install -r requirements.txt`  
+> Then just execute the script with `python3 *scriptname* --help` to see the help page
+
+**WITH WINDOWS EXECUTABLE**  
+> There's also a windows executable compiled inside the `releases` tab. Just download it and 
+> start it with the `command prompt`.
+
 ## FAQ
 **Can I search for more than one tag at once?**
 > Yes, you can. The script treats each word as a single tag.  
