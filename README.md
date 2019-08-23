@@ -34,3 +34,7 @@ It downloads every image it can find matching the given tags from Rule34.
 **Why doesn't it have a GUI?**
 > There's no need to implement a GUI, since the script only
 > takes inputs from command line arguments
+
+## Changelog
+**v1.0-alpha**
+- Project created
