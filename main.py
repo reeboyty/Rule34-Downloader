@@ -22,6 +22,9 @@ def list_diff(list1, list2):
     return (list(set(list1) - set(list2)))
 
 def main(args):
+    if args.verbose:
+        LOGGING_LEVEL = logging.DEBUG
+
     # Prepare an instance of the logger for the current script instance
     logger = logging.getLogger("Rule34Downloader")
     logger.setLevel(LOGGING_LEVEL)
@@ -67,6 +70,7 @@ def main(args):
                  "(this will take approximately {0:.3g} seconds)".format(0.002*images_count))
 
     fetch_start = default_timer() # To measure how much time does it take
+
     try:
         images = rule34sync.getImages(args.tags, singlePage=False)
     except Exception as e:
@@ -146,6 +150,8 @@ if __name__ == "__main__":
             help='the maximum amount of material to download (default: illimited)')
 
     parser.add_argument('--no-videos', '-nv', action='store_true')
+
+    parser.add_argument('--verbose', '-v', action='store_true', help='outputs debug messages')
 
     args = parser.parse_args()
 
